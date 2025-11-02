@@ -1,0 +1,295 @@
+:root {
+  --bg-1: #051428;
+  --bg-2: #072a5a;
+  --accent: #5fd3ff;
+  --accent-2: #4a8cff;
+  --glass-border: rgba(255,255,255,0.14);
+  --text: #eaf6ff;
+  --muted: rgba(234,246,255,0.7);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  padding: 40px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* usuwa ciemne pole na dole */
+body::after {
+  content: none !important;
+}
+
+html, body {
+  height: auto !important;
+  background-attachment: fixed;
+}
+
+/* ===================== SHAPES ===================== */
+.shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 1;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+  animation: floaty 16s ease-in-out infinite alternate;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.shape:hover { transform: scale(1.1); opacity: 0.55; }
+
+@keyframes floaty {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-30px) translateX(20px); }
+  100% { transform: translateY(0) translateX(-10px); }
+}
+
+.s1 { width: 400px; height: 400px; background: radial-gradient(circle, #0d5ae0, #03236f); top: 5%; left: 10%; }
+.s2 { width: 300px; height: 300px; background: radial-gradient(circle, #007aff, #032c74); top: 60%; right: 10%; }
+.s3 { width: 250px; height: 250px; background: radial-gradient(circle, #0aa2ff, #0450b0); top: 20%; right: 30%; }
+.s4 { width: 180px; height: 180px; background: radial-gradient(circle, #0080ff, #023e8a); bottom: 15%; left: 20%; }
+.s5 { width: 220px; height: 220px; background: radial-gradient(circle, #56ccf2, #2f80ed); bottom: 5%; right: 15%; }
+
+/* ===================== LAYOUT ===================== */
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  flex-grow: 1;
+}
+
+/* ===================== TOPBAR ===================== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px) saturate(160%);
+  border-radius: 18px;
+  padding: 12px 16px;
+  border: 1px solid var(--glass-border);
+  margin-bottom: 26px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+.brand { display: flex; align-items: center; gap: 14px; }
+
+.logo {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  display: flex; justify-content: center; align-items: center;
+  font-weight: 800; color: #023047;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+.brand-text { font-weight: 700; color: var(--text); }
+.sub { font-size: 12px; color: var(--muted); }
+
+.nav-actions { display: flex; gap: 10px; }
+
+/* ===================== AUDIO BUTTON ===================== */
+.audio-btn.glass {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  font-size: 22px;
+  color: var(--accent);
+  cursor: pointer;
+  text-align: center;
+}
+
+.audio-btn.glass:hover {
+  background: rgba(95,211,255,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(95,211,255,0.3),
+              0 0 30px rgba(95,211,255,0.2);
+  color: #fff;
+}
+
+/* ===================== BUTTONS ===================== */
+.btn {
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* ===================== HERO SECTION ===================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 28px;
+  padding: 34px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.content h1 {
+  font-size: 26px;
+  margin: 0 0 8px;
+}
+
+.content .intro {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.role {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  gap: 8px;
+}
+
+.cursor {
+  width: 2px !important;
+  background: var(--text);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.tags {
+  display: flex;
+  gap: 6px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* ===================== PROFILE ===================== */
+.profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.portrait-wrap {
+  width: 200px;
+  height: 260px;
+  background: rgba(10,40,80,0.25);
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  margin-right: 10px;
+}
+
+.portrait-wrap img {
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  object-fit: cover;
+  margin: 15px;
+  border-radius: 16px;
+}
+
+.electric-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(0,200,255,0.1), transparent);
+  background-size: 200% 200%;
+  animation: electric 3.5s linear infinite;
+}
+
+@keyframes electric {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===================== SOCIAL SECTION ===================== */
+.social-section {
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 20px;
+  padding: 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.icon.glass {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  font-size: 22px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.icon.glass:hover {
+  background: rgba(95,211,255,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(95,211,255,0.3),
+              0 0 30px rgba(95,211,255,0.2);
+  color: #fff;
+}
+
+/* ===================== REMOVE DARK STRIP AT BOTTOM ===================== */
+footer, .bottom-bg, .dark-section, .page-end {
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 0 !important;
+}

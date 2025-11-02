@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bartosz — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="shape s1"></div>
+  <div class="shape s2"></div>
+  <div class="shape s3"></div>
+  <div class="shape s4"></div>
+  <div class="shape s5"></div>
+
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">B</div>
+        <div class="brand-text">Witaj, mam na imię Bartosz!
+          <div class="sub">Oto strona poświęcona mojemu portfolio.</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <button id="music-toggle" class="audio-btn glass">
+          <i id="audio-icon" class="fa-solid fa-volume-xmark"></i>
+        </button>
+        <a class="btn" href="portfolio_select.html">Portfolio</a>
+        <a href="https://discord.gg/DXjXxgMXd4" target="_blank" class="btn">Discord</a>
+      </div>
+    </div>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="content">
+        <h1 id="hero-title">Witaj, mam na imię Bartosz!</h1>
+        <div class="intro">
+          Zajmuje się na co dzień tworzeniem stron internetowych przy użyciu HTML, CSS oraz JavaScript. Dodatkowo piszę też boty Discord przy użyciu języka Java, JavaScript lub Python. 
+          Zajmuje się też tworzeniem Grafik większości w stylu Minecraft.
+        </div>
+
+        <div class="role">
+          <div class="muted">Jestem</div>
+          <div class="typewrap" aria-live="polite">
+            <span id="typed">Frontend Developerem</span><span class="cursor"></span>
+          </div>
+        </div>
+
+        <div class="tags">
+          <div class="tag">Java</div>
+          <div class="tag">JavaScript</div>
+          <div class="tag">HTML</div>
+          <div class="tag">CSS</div>
+          <div class="tag">Python</div>
+          <div class="tag">Grafiki</div>
+        </div>
+      </div>
+
+      <div class="profile">
+        <div class="portrait-wrap">
+          <img src="IMG_20251101_102231_472.webp" alt="Zdjęcie">
+          <div class="electric-border"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="socials" class="social-section">
+      <h3>Social Media</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/9_bartek/" target="_blank" class="icon glass"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://github.com/67Kaczmar" target="_blank" class="icon glass"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.tiktok.com/@9_bartek" target="_blank" class="icon glass"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@67Kaczmar" target="_blank" class="icon glass"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </section>
+
+  </div>
+
+  <audio id="bg-music" src="music.mp3" loop></audio>
+
+  <script src="index.js"></script>
+</body>
+</html>
