@@ -1,5 +1,5 @@
 (function() {
-  const phrases = ["Bot Developerem", "Grafikiem Komputerowym"];
+  const phrases = ["Bot Developerem", "Frontend Developerem", "Grafikiem Komputerowym"];
   const el = document.getElementById('typed');
   const typingSpeed = 80;
   const pauseBetween = 1200;
